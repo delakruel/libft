@@ -6,7 +6,7 @@
 /*   By: rloyce <rloyce@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/18 21:02:32 by rloyce            #+#    #+#             */
-/*   Updated: 2021/04/18 21:07:43 by rloyce           ###   ########.fr       */
+/*   Updated: 2021/04/21 18:45:14 by rloyce           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strdup(const char *str)
 	char	*copy;
 	size_t	i;
 
-	copy = (char *)malloc((ft_strlen(str) + 1) * sizeof(str));
+	copy = (char *)malloc((ft_strlen(str) + 1) * sizeof(char));
 	if (!copy)
 		return (NULL);
 	i = 0;
