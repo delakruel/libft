@@ -6,7 +6,7 @@
 /*   By: rloyce <rloyce@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/18 19:06:55 by rloyce            #+#    #+#             */
-/*   Updated: 2021/04/19 02:32:21 by rloyce           ###   ########.fr       */
+/*   Updated: 2021/04/21 14:49:28 by rloyce           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	n;
-	int	sign;
+	int		i;
+	long	n;
+	int		sign;
 
 	if (!str)
 		return (0);
@@ -36,5 +36,5 @@ int	ft_atoi(const char *str)
 		n = (n * 10) + (str[i] - '0');
 		i++;
 	}
-	return (sign * n);
+	return ((int)(sign * n));
 }

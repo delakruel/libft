@@ -6,7 +6,7 @@
 /*   By: rloyce <rloyce@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 22:45:14 by rloyce            #+#    #+#             */
-/*   Updated: 2021/04/19 23:02:59 by rloyce           ###   ########.fr       */
+/*   Updated: 2021/04/21 15:08:56 by rloyce           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*res;
 	size_t	i;
 
+	if (!s || len <= 0 || start >= ft_strlen(s))
+		return (ft_strdup(""));
 	res = (char *)malloc(len + 1);
 	if (!res)
 		return (NULL);
