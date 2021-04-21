@@ -6,7 +6,7 @@
 /*   By: rloyce <rloyce@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 23:41:49 by rloyce            #+#    #+#             */
-/*   Updated: 2021/04/21 15:22:13 by rloyce           ###   ########.fr       */
+/*   Updated: 2021/04/21 18:37:14 by rloyce           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 		j --;
 	k = 0;
 	res = (char *)malloc(sizeof(*s1) * (j - i + 1));
+	if (!res)
+		return (NULL);
 	while (i <= j)
 	{
 		res[k] = s1[i];
