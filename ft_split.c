@@ -6,18 +6,18 @@
 /*   By: rloyce <rloyce@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 12:48:59 by rloyce            #+#    #+#             */
-/*   Updated: 2021/04/20 23:08:38 by rloyce           ###   ########.fr       */
+/*   Updated: 2021/04/29 14:24:19 by rloyce           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	char	**ft_error(char **rrr, size_t j)
+static	char	**ft_error(char **rrr)
 {
 	size_t	i;
 
 	i = 0;
-	while ((i < j) && (rrr[i]))
+	while (rrr[i])
 	{
 		free(rrr[i]);
 		i++;
@@ -32,12 +32,15 @@ static	size_t	ft_count(char const *s, char c)
 	int	k;
 
 	i = 0;
-	k = 1;
+	k = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		while (s[i] == c)
+			i++;
+		if (s[i] != c && s[i])
 			k++;
-		i++;
+		while (s[i] != c && s[i])
+			i++;
 	}
 	return (k);
 }
@@ -71,7 +74,7 @@ char	**ft_split(char const *s, char c)
 	size_t	i;
 	size_t	j;
 
-	res = (char **)malloc(sizeof(char *) * (ft_count(s, c) + 1) + 1);
+	res = (char **)malloc(sizeof(char *) * (ft_count(s, c) + 1));
 	if (!res)
 		return (NULL);
 	i = 0;
@@ -84,7 +87,7 @@ char	**ft_split(char const *s, char c)
 		{
 			res[j] = st(s, c, i);
 			if (res[j] == NULL)
-				return (ft_error(res, j));
+				return (ft_error(res));
 			j++;
 			while (s[i] && (s[i] != c))
 				i++;
